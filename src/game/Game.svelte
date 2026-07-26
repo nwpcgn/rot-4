@@ -1,4 +1,5 @@
 <script lang="ts">
+	import opionsMap from './optionMapBase'
 	import Logger from './Logger.svelte'
 	import { isDebugging } from './options'
 	import { onMount } from 'svelte'
@@ -13,33 +14,30 @@
 	import GameOver from '$game/GameOver.svelte'
 	import Preview from './Preview.svelte'
 	import { generateDungeon } from './generateDungeon'
-
-	let {
-		VIEW_WIDTH = 20,
-		VIEW_HEIGHT = 12,
-		MAP_WIDTH = 60,
-		MAP_HEIGHT = 40,
-		TILE_SIZE = 32
-	} = $props()
+	let gamePage = $state({ w: 0, h: 0 })
+	let options = $state({
+		VIEW_WIDTH: 20,
+		VIEW_HEIGHT: 12,
+		MAP_WIDTH: 60,
+		MAP_HEIGHT: 40,
+		TILE_SIZE: 32
+	})
 
 	let op = $state({
-		width: MAP_WIDTH,
-		height: MAP_HEIGHT,
-		algorithm: 'digger',
-		roomWidth: [4, 11] /* room minimum and maximum width */,
-		roomHeight: [3, 6] /* room minimum and maximum height */,
-		corridorLength: [3, 12] /* corridor minimum and maximum length */,
-		dugPercentage: 0.2 /* we stop after this percentage of level area has been dug out */,
-		roomDugPercentage: 0.1 /* we stop after this much time has passed (msec) */
+		...opionsMap,
+		width: options.MAP_WIDTH,
+		height: options.MAP_HEIGHT
 	})
 
 	const createGrid = <T,>(fill: T) =>
-		Array.from({ length: MAP_HEIGHT }, () => Array(MAP_WIDTH).fill(fill))
+		Array.from({ length: options.MAP_HEIGHT }, () =>
+			Array(options.MAP_WIDTH).fill(fill)
+		)
 
 	let roomList = $state([])
-	let end = $state({ x: 0, y: 0 })
-	let keyLock = $state(false)
 
+	let keyLock = $state(false)
+	let end = $state({ x: 0, y: 0 })
 	// ─── State ─────────────────────────────────────────────────
 	let gameOver = $derived(!isAlive(player))
 	let player = $state<Player>({
@@ -106,12 +104,13 @@
 	// ─── FOV ───────────────────────────────────────────────────
 	function updateFOV() {
 		const fov = new ROT.FOV.PreciseShadowcasting((x, y) => {
-			if (x < 0 || x >= MAP_WIDTH || y < 0 || y >= MAP_HEIGHT) return false
+			if (x < 0 || x >= options.MAP_WIDTH || y < 0 || y >= options.MAP_HEIGHT)
+				return false
 			return TILE_DEFS[map[y][x]]?.lightPass ?? false
 		})
-		for (let y = 0; y < MAP_HEIGHT; y++) visible[y].fill(false)
+		for (let y = 0; y < options.MAP_HEIGHT; y++) visible[y].fill(false)
 		fov.compute(player.pos.x, player.pos.y, 10, (x, y) => {
-			if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
+			if (x >= 0 && x < options.MAP_WIDTH && y >= 0 && y < options.MAP_HEIGHT) {
 				visible[y][x] = true
 				explored[y][x] = true
 			}
@@ -124,20 +123,20 @@
 		const ox = Math.max(
 			0,
 			Math.min(
-				player.pos.x - Math.floor(VIEW_WIDTH / 2),
-				MAP_WIDTH - VIEW_WIDTH
+				player.pos.x - Math.floor(options.VIEW_WIDTH / 2),
+				options.MAP_WIDTH - options.VIEW_WIDTH
 			)
 		)
 		const oy = Math.max(
 			0,
 			Math.min(
-				player.pos.y - Math.floor(VIEW_HEIGHT / 2),
-				MAP_HEIGHT - VIEW_HEIGHT
+				player.pos.y - Math.floor(options.VIEW_HEIGHT / 2),
+				options.MAP_HEIGHT - options.VIEW_HEIGHT
 			)
 		)
 
-		for (let y = 0; y < VIEW_HEIGHT; y++) {
-			for (let x = 0; x < VIEW_WIDTH; x++) {
+		for (let y = 0; y < options.VIEW_HEIGHT; y++) {
+			for (let x = 0; x < options.VIEW_WIDTH; x++) {
 				const mx = x + ox,
 					my = y + oy
 				if (!visible[my][mx] && !explored[my][mx]) continue
@@ -293,14 +292,14 @@
 
 	/* ------------------------------- Reset Game ------------------------------- */
 
-	// Reset: alles auf Anfang
-	function resetGame() {
+	function resetPlayer() {
 		// Stats zurücksetzen
 		player.stats.hp = player.stats.maxHp
 		player.pos.x = 0
 		player.pos.y = 0
 		player.inventory = []
-
+	}
+	function resetMap() {
 		// Grids neu erstellen
 		map = createGrid<TileId>(TILE.WALL)
 		items = createGrid<Item | null>(null)
@@ -308,30 +307,33 @@
 		visible = createGrid(false)
 		enemies = []
 		log = ['Neues Spiel gestartet.']
-
-		// Map neu generieren — $effect zeichnet automatisch neu
-		generateMap()
-		// updateFOV()
-		// draw()
 	}
 
-	// ─── Mount ─────────────────────────────────────────────────
-	onMount(() => {
+	const resetGame = async () => {
 		display = new ROT.Display({
-			width: VIEW_WIDTH,
-			height: VIEW_HEIGHT,
-			fontSize: TILE_SIZE,
+			width: options.VIEW_WIDTH,
+			height: options.VIEW_HEIGHT,
+			fontSize: options.TILE_SIZE,
 			forceSquareRatio: true
 		})
 		document
 			.getElementById('game-container')
 			?.appendChild(display.getContainer()!)
-
-		resetGame()
+		resetPlayer()
+		resetMap()
+		generateMap()
 		mounted = true
 
 		// updateFOV()
 		// draw()
+
+		window.addEventListener('keydown', handleInput)
+		return () => window.removeEventListener('keydown', handleInput)
+	}
+
+	// ─── Mount ─────────────────────────────────────────────────
+	onMount(() => {
+		resetGame()
 
 		window.addEventListener('keydown', handleInput)
 		return () => window.removeEventListener('keydown', handleInput)
@@ -365,21 +367,37 @@
 </div>
 <main class="main">
 	<section class="page page-fixed nwp">
-		<div class="grid flex-1 place-content-center">
+		<div
+			bind:clientWidth={gamePage.w}
+			bind:clientHeight={gamePage.h}
+			class="grid flex-1 place-content-center">
 			<div style="position: relative">
 				<div>
 					<div class="split">
 						<div>
-							<em>Map:</em>
-							<b>{MAP_WIDTH}x{MAP_HEIGHT}</b>
+							<span>
+								<em>Map:</em>
+								<b>{options.MAP_WIDTH}x{options.MAP_HEIGHT}</b>
+							</span>
+							<span>
+								<em>View:</em>
+								<b>{options.VIEW_WIDTH}x{options.VIEW_HEIGHT}</b>
+							</span>
 						</div>
 
-						<span
-							><em>Enemies:</em> <b>{enemies.length}</b> | <em>Items</em>
-							<b>{itemsOnMap}</b></span>
+						<div>
+							<span><em>Rooms:</em> <b>{roomList.length}</b></span>
+							<span
+								><em>Enemies:</em> <b>{enemies.length}</b>
+
+								<em>Items</em>
+								<b>{itemsOnMap}</b></span>
+						</div>
 					</div>
 				</div>
+
 				<div id="game-container"></div>
+
 				{#if gameOver}
 					<GameOver onReset={resetGame} />
 				{/if}
@@ -387,6 +405,7 @@
 		</div>
 		<Logger {log}></Logger>
 	</section>
+
 	<aside class="aside space-y-2 bg-base-300 p-2">
 		<Preview {map} {player} {explored}></Preview>
 
