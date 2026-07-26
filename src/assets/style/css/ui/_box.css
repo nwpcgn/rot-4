@@ -1,0 +1,38 @@
+@layer componentsNwp {
+	.box {
+		--box-gap: var(--spacing-sm);
+		--box-gap-xs: var(--spacing-xs);
+		@apply grid grid-rows-[min-content_1fr_min-content] gap-[var(--box-gap)];
+		& > header,
+		& > footer {
+			@apply flex items-center gap-[var(--box-gap)] bg-base-200;
+			& nav {
+				@apply flex items-center gap-[var(--box-gap-xs)];
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				@apply mt-0 mb-0;
+			}
+		}
+		& > header {
+			@apply justify-between;
+
+			& > .title {
+				@apply px-2 font-bold;
+			}
+		}
+		& > footer {
+			@apply outline outline-1 outline-base-300;
+			> span {
+				@apply flex-1;
+			}
+		}
+		& > article {
+			@apply bg-base-100 outline outline-1 outline-base-300;
+		}
+	}
+}

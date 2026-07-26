@@ -1,0 +1,283 @@
+:root {
+	--color-terminal-dark: oklch(14.5% 0 0);
+	--color-terminal-bg: oklch(20.5% 0 0);
+	--color-terminal-accent: oklch(37.2% 0.044 257.287);
+	--color-terminal-surface: oklch(20.463% 0.00002 271.152);
+	--color-terminal-text: oklch(92.2% 0 0);
+	--color-terminal-primary: oklch(86.645% 0.29481 142.511);
+	--color-terminal-success: oklch(0.7588 0.2948 142.51);
+	--color-terminal-error: oklch(57.7% 0.245 27.325);
+	--color-terminal-warning: oklch(87.9% 0.169 91.605);
+	--color-terminal-info: oklch(68.5% 0.169 237.323);
+	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+	--border-glow: 1px solid oklch(86.645% 0.29481 142.511 / 0.7);
+	--shadow-glow: 0 0 12px oklch(86.645% 0.29481 142.511 / 0.444);
+
+	--color-charcoal-blue-50: rgb(239 242 246);
+	--color-charcoal-blue-100: rgb(222 230 237);
+	--color-charcoal-blue-200: rgb(189 204 219);
+	--color-charcoal-blue-300: rgb(156 178 201);
+	--color-charcoal-blue-400: rgb(123 153 183);
+	--color-charcoal-blue-500: rgb(91 127 164);
+	--color-charcoal-blue-600: rgb(72 102 132);
+	--color-charcoal-blue-700: rgb(54 76 99);
+	--color-charcoal-blue-800: rgb(36 51 66);
+	--color-charcoal-blue-900: rgb(18 25 33);
+	--color-charcoal-blue-950: rgb(13 18 23);
+	--color-bright-amber-50: rgb(254 249 231);
+	--color-bright-amber-100: rgb(252 243 207);
+	--color-bright-amber-200: rgb(249 231 159);
+	--color-bright-amber-300: rgb(247 219 110);
+	--color-bright-amber-400: rgb(244 207 62);
+	--color-bright-amber-500: rgb(241 196 14);
+	--color-bright-amber-600: rgb(193 156 11);
+	--color-bright-amber-700: rgb(145 117 8);
+	--color-bright-amber-800: rgb(96 78 6);
+	--color-bright-amber-900: rgb(48 39 3);
+	--color-bright-amber-950: rgb(34 27 2);
+	--color-blue-bell-50: rgb(233 244 251);
+	--color-blue-bell-100: rgb(212 233 247);
+	--color-blue-bell-200: rgb(168 211 240);
+	--color-blue-bell-300: rgb(125 189 232);
+	--color-blue-bell-400: rgb(82 167 224);
+	--color-blue-bell-500: rgb(38 145 217);
+	--color-blue-bell-600: rgb(31 116 173);
+	--color-blue-bell-700: rgb(23 87 130);
+	--color-blue-bell-800: rgb(15 58 87);
+	--color-blue-bell-900: rgb(8 29 43);
+	--color-blue-bell-950: rgb(5 20 30);
+	--color-seagrass-50: rgb(233 252 248);
+	--color-seagrass-100: rgb(210 249 241);
+	--color-seagrass-200: rgb(165 243 227);
+	--color-seagrass-300: rgb(120 237 213);
+	--color-seagrass-400: rgb(75 231 200);
+	--color-seagrass-500: rgb(31 224 186);
+	--color-seagrass-600: rgb(24 180 149);
+	--color-seagrass-700: rgb(18 135 111);
+	--color-seagrass-800: rgb(12 90 74);
+	--color-seagrass-900: rgb(6 45 37);
+	--color-seagrass-950: rgb(4 31 26);
+	--color-platinum-50: rgb(240 243 244);
+	--color-platinum-100: rgb(226 232 233);
+	--color-platinum-200: rgb(196 209 212);
+	--color-platinum-300: rgb(167 185 190);
+	--color-platinum-400: rgb(138 162 168);
+	--color-platinum-500: rgb(108 139 147);
+	--color-platinum-600: rgb(87 111 117);
+	--color-platinum-700: rgb(65 83 88);
+	--color-platinum-800: rgb(43 56 59);
+	--color-platinum-900: rgb(22 28 29);
+	--color-platinum-950: rgb(15 19 21);
+}
+
+@theme {
+	--color-terminal-dark: oklch(14.5% 0 0);
+	--color-terminal-bg: oklch(20.5% 0 0);
+	--color-terminal-accent: oklch(37.2% 0.044 257.287);
+	--color-terminal-surface: oklch(20.463% 0.00002 271.152);
+	--color-terminal-text: oklch(92.2% 0 0);
+	--color-terminal-primary: oklch(86.645% 0.29481 142.511);
+	--color-terminal-success: oklch(0.7588 0.2948 142.51);
+	--color-terminal-error: oklch(57.7% 0.245 27.325);
+	--color-terminal-warning: oklch(87.9% 0.169 91.605);
+	--color-terminal-info: oklch(68.5% 0.169 237.323);
+	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+	--border-glow: 1px solid oklch(86.645% 0.29481 142.511 / 0.7);
+	--shadow-glow: 0 0 12px oklch(86.645% 0.29481 142.511 / 0.444);
+
+	--color-charcoal-blue-50: rgb(239 242 246);
+	--color-charcoal-blue-100: rgb(222 230 237);
+	--color-charcoal-blue-200: rgb(189 204 219);
+	--color-charcoal-blue-300: rgb(156 178 201);
+	--color-charcoal-blue-400: rgb(123 153 183);
+	--color-charcoal-blue-500: rgb(91 127 164);
+	--color-charcoal-blue-600: rgb(72 102 132);
+	--color-charcoal-blue-700: rgb(54 76 99);
+	--color-charcoal-blue-800: rgb(36 51 66);
+	--color-charcoal-blue-900: rgb(18 25 33);
+	--color-charcoal-blue-950: rgb(13 18 23);
+
+	--color-bright-amber-50: rgb(254 249 231);
+	--color-bright-amber-100: rgb(252 243 207);
+	--color-bright-amber-200: rgb(249 231 159);
+	--color-bright-amber-300: rgb(247 219 110);
+	--color-bright-amber-400: rgb(244 207 62);
+	--color-bright-amber-500: rgb(241 196 14);
+	--color-bright-amber-600: rgb(193 156 11);
+	--color-bright-amber-700: rgb(145 117 8);
+	--color-bright-amber-800: rgb(96 78 6);
+	--color-bright-amber-900: rgb(48 39 3);
+	--color-bright-amber-950: rgb(34 27 2);
+
+	--color-blue-bell-50: rgb(233 244 251);
+	--color-blue-bell-100: rgb(212 233 247);
+	--color-blue-bell-200: rgb(168 211 240);
+	--color-blue-bell-300: rgb(125 189 232);
+	--color-blue-bell-400: rgb(82 167 224);
+	--color-blue-bell-500: rgb(38 145 217);
+	--color-blue-bell-600: rgb(31 116 173);
+	--color-blue-bell-700: rgb(23 87 130);
+	--color-blue-bell-800: rgb(15 58 87);
+	--color-blue-bell-900: rgb(8 29 43);
+	--color-blue-bell-950: rgb(5 20 30);
+
+	--color-seagrass-50: rgb(233 252 248);
+	--color-seagrass-100: rgb(210 249 241);
+	--color-seagrass-200: rgb(165 243 227);
+	--color-seagrass-300: rgb(120 237 213);
+	--color-seagrass-400: rgb(75 231 200);
+	--color-seagrass-500: rgb(31 224 186);
+	--color-seagrass-600: rgb(24 180 149);
+	--color-seagrass-700: rgb(18 135 111);
+	--color-seagrass-800: rgb(12 90 74);
+	--color-seagrass-900: rgb(6 45 37);
+	--color-seagrass-950: rgb(4 31 26);
+
+	--color-platinum-50: rgb(240 243 244);
+	--color-platinum-100: rgb(226 232 233);
+	--color-platinum-200: rgb(196 209 212);
+	--color-platinum-300: rgb(167 185 190);
+	--color-platinum-400: rgb(138 162 168);
+	--color-platinum-500: rgb(108 139 147);
+	--color-platinum-600: rgb(87 111 117);
+	--color-platinum-700: rgb(65 83 88);
+	--color-platinum-800: rgb(43 56 59);
+	--color-platinum-900: rgb(22 28 29);
+	--color-platinum-950: rgb(15 19 21);
+}
+
+@plugin 'daisyui/theme' {
+	name: 'nwp-light';
+	default: false;
+	prefersdark: false;
+	color-scheme: 'light';
+	--color-base-100: oklch(91.637% 0.034 90.515);
+	--color-base-200: oklch(88.272% 0.049 91.774);
+	--color-base-300: oklch(84.133% 0.065 90.856);
+	--color-base-content: oklch(41% 0.112 45.904);
+	--color-primary: oklch(80% 0.114 19.571);
+	--color-primary-content: oklch(39% 0.141 25.723);
+	--color-secondary: oklch(76% 0.177 163.223);
+	--color-secondary-content: oklch(37% 0.077 168.94);
+	--color-accent: oklch(65% 0.241 354.308);
+	--color-accent-content: oklch(94% 0.028 342.258);
+	--color-neutral: oklch(26% 0.007 34.298);
+	--color-neutral-content: oklch(92% 0.003 48.717);
+	--color-info: oklch(58% 0.158 241.966);
+	--color-info-content: oklch(96% 0.059 95.617);
+	--color-success: oklch(60% 0.118 184.704);
+	--color-success-content: oklch(96% 0.059 95.617);
+	--color-warning: oklch(76% 0.188 70.08);
+	--color-warning-content: oklch(41% 0.112 45.904);
+	--color-error: oklch(63% 0.237 25.331);
+	--color-error-content: oklch(93% 0.032 17.717);
+}
+
+.retro {
+	:root {
+		--color-base-100: oklch(91.637% 0.034 90.515);
+		--color-base-200: oklch(88.272% 0.049 91.774);
+		--color-base-300: oklch(84.133% 0.065 90.856);
+		--color-base-content: oklch(41% 0.112 45.904);
+		--color-primary: oklch(80% 0.114 19.571);
+		--color-primary-content: oklch(39% 0.141 25.723);
+		--color-secondary: oklch(84% 0.143 164.978);
+		--color-secondary-content: oklch(43% 0.095 166.913);
+		--color-accent: oklch(65% 0.241 354.308);
+		--color-accent-content: oklch(94% 0.028 342.258);
+		--color-neutral: oklch(44% 0.011 73.639);
+		--color-neutral-content: oklch(86% 0.005 56.366);
+		--color-info: oklch(58% 0.158 241.966);
+		--color-info-content: oklch(96% 0.059 95.617);
+		--color-success: oklch(51% 0.096 186.391);
+		--color-success-content: oklch(96% 0.059 95.617);
+		--color-warning: oklch(76% 0.188 70.08);
+		--color-warning-content: oklch(41% 0.112 45.904);
+		--color-error: oklch(63% 0.237 25.331);
+		--color-error-content: oklch(93% 0.032 17.717);
+		--radius-selector: 0.25rem;
+		--radius-field: 0rem;
+		--radius-box: 0.5rem;
+		--size-selector: 0.21875rem;
+		--size-field: 0.21875rem;
+		--border: 2px;
+		--depth: 0;
+		--noise: 0;
+	}
+}
+
+.retro2 {
+	@theme {
+		--color-terminal-dark: oklch(14.5% 0 0);
+		--color-terminal-bg: oklch(20.5% 0 0);
+		--color-terminal-accent: oklch(37.2% 0.044 257.287);
+		--color-terminal-surface: oklch(20.463% 0.00002 271.152);
+		--color-terminal-text: oklch(92.2% 0 0);
+		--color-terminal-primary: oklch(86.645% 0.29481 142.511);
+		--color-terminal-success: oklch(0.7588 0.2948 142.51);
+		--color-terminal-error: oklch(57.7% 0.245 27.325);
+		--color-terminal-warning: oklch(87.9% 0.169 91.605);
+		--color-terminal-info: oklch(68.5% 0.169 237.323);
+		--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+		--border-glow: 1px solid oklch(86.645% 0.29481 142.511 / 0.7);
+		--shadow-glow: 0 0 12px oklch(86.645% 0.29481 142.511 / 0.444);
+		--color-base-100: oklch(91.637% 0.034 90.515);
+		--color-base-200: oklch(88.272% 0.049 91.774);
+		--color-base-300: oklch(84.133% 0.065 90.856);
+		--color-base-content: oklch(41% 0.112 45.904);
+		--color-primary: oklch(80% 0.114 19.571);
+		--color-primary-content: oklch(39% 0.141 25.723);
+		--color-secondary: oklch(84% 0.143 164.978);
+		--color-secondary-content: oklch(43% 0.095 166.913);
+		--color-accent: oklch(65% 0.241 354.308);
+		--color-accent-content: oklch(94% 0.028 342.258);
+		--color-neutral: oklch(44% 0.011 73.639);
+		--color-neutral-content: oklch(86% 0.005 56.366);
+		--color-info: oklch(58% 0.158 241.966);
+		--color-info-content: oklch(96% 0.059 95.617);
+		--color-success: oklch(51% 0.096 186.391);
+		--color-success-content: oklch(96% 0.059 95.617);
+		--color-warning: oklch(76% 0.188 70.08);
+		--color-warning-content: oklch(41% 0.112 45.904);
+		--color-error: oklch(63% 0.237 25.331);
+		--color-error-content: oklch(93% 0.032 17.717);
+		--radius-selector: 0.25rem;
+		--radius-field: 0rem;
+		--radius-box: 0.5rem;
+	}
+}
+
+@plugin 'daisyui/theme' {
+	name: 'skylar';
+	default: false;
+	prefersdark: false;
+	color-scheme: 'light';
+	--color-base-100: #d3f0f7;
+	--color-base-200: #c6ecf5;
+	--color-base-300: #b0e5f3;
+	--color-base-content: #19434d;
+	--color-primary: #0c6392;
+	--color-primary-content: oklch(95% 0.026 236.824);
+	--color-secondary: oklch(70% 0 0);
+	--color-secondary-content: oklch(14% 0 0);
+	--color-accent: oklch(65% 0.241 354.308);
+	--color-accent-content: oklch(94% 0.028 342.258);
+	--color-neutral: #0f2d3d;
+	--color-neutral-content: oklch(98% 0.002 247.839);
+	--color-info: oklch(68% 0.169 237.323);
+	--color-info-content: oklch(95% 0.026 236.824);
+	--color-success: oklch(69% 0.17 162.48);
+	--color-success-content: oklch(26% 0.051 172.552);
+	--color-warning: oklch(82% 0.189 84.429);
+	--color-warning-content: oklch(98% 0.022 95.277);
+	--color-error: oklch(64% 0.246 16.439);
+	--color-error-content: oklch(27% 0.105 12.094);
+	--radius-selector: 0.25rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 0;
+	--noise: 1;
+}

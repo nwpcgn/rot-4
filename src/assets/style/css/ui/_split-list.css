@@ -1,0 +1,15 @@
+@layer componentsNwp {
+	.split-list > *,
+	.split {
+		--split-gap: var(--spacing-sm);
+		display: flex;
+		align-items: center;
+		gap: var(--split-gap);
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		> nav {
+			@apply flex items-center gap-[var(--split-gap)];
+		}
+	}
+}

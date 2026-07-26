@@ -1,0 +1,240 @@
+{
+	"moves": [
+		{
+			"name": "Burning Grip",
+			"dice": 7,
+			"damage": 8,
+			"info": "You grab the enemy with a fiery hand."
+		},
+		{
+			"name": "Crushing Blow",
+			"dice": 6,
+			"damage": 7,
+			"info": "You deliver a brutal overhead strike."
+		},
+		{
+			"name": "Dark Pulse",
+			"dice": 7,
+			"damage": 8,
+			"info": "You unleash a pulse of dark energy."
+		},
+		{
+			"name": "Earth Spike",
+			"dice": 3,
+			"damage": 4,
+			"info": "You summon a rock spike from the ground below the foe."
+		},
+		{
+			"name": "Fireball",
+			"dice": 6,
+			"damage": 7,
+			"info": "You launch a blazing fireball that explodes on impact."
+		},
+		{
+			"name": "Flame Slash",
+			"dice": 6,
+			"damage": 7,
+			"info": "You ignite your blade and slash with burning force."
+		},
+		{
+			"name": "Frost Nova",
+			"dice": 5,
+			"damage": 6,
+			"info": "You release a freezing wave that slows all enemies nearby."
+		},
+		{
+			"name": "Heavy Kick",
+			"dice": 7,
+			"damage": 8,
+			"info": "You slam your foot into the enemy with great force."
+		},
+		{
+			"name": "Holy Light",
+			"dice": 3,
+			"damage": 4,
+			"info": "You blast the target with pure radiant energy."
+		},
+		{
+			"name": "Ice Spear",
+			"dice": 6,
+			"damage": 7,
+			"info": "You hurl a spear of ice that slows the enemy."
+		},
+		{
+			"name": "Piercing Shot",
+			"dice": 6,
+			"damage": 7,
+			"info": "You fire a precise arrow that pierces armor."
+		},
+		{
+			"name": "Poison Fang",
+			"dice": 7,
+			"damage": 8,
+			"info": "You bite with venomous teeth weakening the enemy."
+		},
+		{
+			"name": "Quick Jab",
+			"dice": 4,
+			"damage": 5,
+			"info": "You attack swiftly before the enemy can react."
+		},
+		{
+			"name": "Shadow Stab",
+			"dice": 5,
+			"damage": 6,
+			"info": "You vanish briefly and strike from behind."
+		},
+		{
+			"name": "Shield Bash",
+			"dice": 3,
+			"damage": 4,
+			"info": "You are trying to bash the opponent away with your shield."
+		},
+		{
+			"name": "Soul Drain",
+			"dice": 6,
+			"damage": 7,
+			"info": "You drain part of the enemy's essence to heal yourself."
+		},
+		{
+			"name": "Thunder Fist",
+			"dice": 3,
+			"damage": 4,
+			"info": "You charge your fist with lightning and strike down."
+		},
+		{
+			"name": "Venom Dart",
+			"dice": 4,
+			"damage": 5,
+			"info": "You throw a dart coated with fast-acting poison."
+		},
+		{
+			"name": "Whirlwind",
+			"dice": 7,
+			"damage": 8,
+			"info": "You spin with full force and strike all nearby enemies."
+		},
+		{
+			"name": "Wind Cutter",
+			"dice": 6,
+			"damage": 7,
+			"info": "You launch a blade of compressed air at high speed."
+		}
+	],
+	"heros": [
+		{
+			"name": "Astra",
+			"info": "Controller",
+			"img": "https://i.imgur.com/qyBefUI.png",
+			"avatar": "https://i.imgur.com/fYu0YrJ.png"
+		},
+		{
+			"name": "Breach",
+			"info": "Initiator",
+			"img": "https://i.imgur.com/nBUpL61.png",
+			"avatar": "https://i.imgur.com/EnmfLgx.png"
+		},
+		{
+			"name": "Brimstone",
+			"info": "Controller",
+			"img": "https://i.imgur.com/b0g1dEl.png",
+			"avatar": "https://i.imgur.com/nzyqgff.png"
+		},
+		{
+			"name": "Chamber",
+			"info": "Sentinel",
+			"img": "https://i.imgur.com/ICZ4Q2o.png",
+			"avatar": "https://i.imgur.com/Fz4M05U.png"
+		},
+		{
+			"name": "Cypher",
+			"info": "Sentinel",
+			"img": "https://i.imgur.com/rFBr4IJ.png",
+			"avatar": "https://i.imgur.com/TIOhpiD.png"
+		},
+		{
+			"name": "Fade",
+			"info": "Initiator",
+			"img": "https://i.imgur.com/1MoOWxx.png",
+			"avatar": "https://i.imgur.com/flIsYoe.png"
+		},
+		{
+			"name": "Jett",
+			"info": "Duelist",
+			"img": "https://i.imgur.com/Khk7JZi.png",
+			"avatar": "https://i.imgur.com/4jBvtLW.png"
+		},
+		{
+			"name": "KAYO",
+			"info": "Initiator",
+			"img": "https://i.imgur.com/Mcelcnm.png",
+			"avatar": "https://i.imgur.com/NtHkMoR.png"
+		},
+		{
+			"name": "Killjoy",
+			"info": "Sentinel",
+			"img": "https://i.imgur.com/gWUHhrV.png",
+			"avatar": "https://i.imgur.com/9YupEiP.png"
+		},
+		{
+			"name": "Neon",
+			"info": "Duelist",
+			"img": "https://i.imgur.com/rylze1Q.png",
+			"avatar": "https://i.imgur.com/msl9MJN.png"
+		},
+		{
+			"name": "Omen",
+			"info": "Controller",
+			"img": "https://i.imgur.com/EFSMnyR.png",
+			"avatar": "https://i.imgur.com/nY2WkhK.png"
+		},
+		{
+			"name": "Phoenix",
+			"info": "Duelist",
+			"img": "https://i.imgur.com/hwjaggc.png",
+			"avatar": "https://i.imgur.com/pL6u7EP.png"
+		},
+		{
+			"name": "Raze",
+			"info": "Duelist",
+			"img": "https://i.imgur.com/T0hyUkA.png",
+			"avatar": "https://i.imgur.com/O09PJwR.png"
+		},
+		{
+			"name": "Reyna",
+			"info": "Duelist",
+			"img": "https://i.imgur.com/pEL9sby.png",
+			"avatar": "https://i.imgur.com/95fHamJ.png"
+		},
+		{
+			"name": "Sage",
+			"info": "Sentinel",
+			"img": "https://i.imgur.com/VPNmyjN.png",
+			"avatar": "https://i.imgur.com/60RcWaY.png"
+		},
+		{
+			"name": "Skye",
+			"info": "Initiator",
+			"img": "https://i.imgur.com/m5DiHlk.png",
+			"avatar": "https://i.imgur.com/rGdgVpB.png"
+		},
+		{
+			"name": "Sova",
+			"info": "Initiator",
+			"img": "https://i.imgur.com/Hd3Xubv.png",
+			"avatar": "https://i.imgur.com/jJW4oiu.png"
+		},
+		{
+			"name": "Viper",
+			"info": "Controller",
+			"img": "https://i.imgur.com/lfLVtvy.png",
+			"avatar": "https://i.imgur.com/pZOwuH7.png"
+		},
+		{
+			"name": "Yoru",
+			"info": "Duelist",
+			"img": "https://i.imgur.com/woZPQA1.png",
+			"avatar": "https://i.imgur.com/q2gHldt.png"
+		}
+	]
+}

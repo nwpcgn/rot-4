@@ -1,0 +1,41 @@
+@layer componentsNwp {
+	.game-container {
+		flex: 1;
+		display: grid;
+		grid-template-columns: 1fr 300px;
+		grid-template-rows: 1fr 180px;
+		grid-template-areas:
+			'map sidebar'
+			'log sidebar';
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+	}
+
+	.map {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: 'page';
+		grid-area: map;
+	}
+
+	.logbar {
+		grid-area: log;
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+
+	.sidebar {
+		grid-area: sidebar;
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}

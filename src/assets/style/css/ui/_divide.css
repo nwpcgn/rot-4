@@ -1,0 +1,23 @@
+/* --------------------------------- Divide --------------------------------- */
+@layer componentsNwp {
+	.divided {
+		--border-color: var(--color-base-300);
+		--gap: var(--spacing-xs);
+	}
+
+	.divided > * + * {
+		padding: 0;
+		padding-block-start: var(--gap);
+	}
+
+	.divided > *:first-child,
+	.divided > *:has(+ *) {
+		padding-block-end: var(--gap);
+	}
+
+	.divided > *:has(+ *) {
+		border-block-end: 1px solid var(--border-color);
+		margin: 0;
+		padding-inline: 0;
+	}
+}

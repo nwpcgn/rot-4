@@ -1,0 +1,155 @@
+/* -------------------------------------------------------------------------- */
+/*                                  Main/Page                                 */
+/* -------------------------------------------------------------------------- */
+@layer components {
+	:root {
+		--sb-width-max: 320px;
+		--sb-width-min: 0px;
+		--sb-width: var(--sb-width-min);
+	}
+
+	.main {
+		margin-top: var(--bar, 0px);
+		margin-bottom: var(--foo, 0px);
+		flex: 1;
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-template-rows: 1fr;
+		grid-template-areas: 'page aside';
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow-y: hidden;
+		overflow-x: hidden;
+	}
+
+	.page {
+		grid-area: page;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+
+		> article,
+		.content {
+			padding: var(--spacing-clamp);
+			width: 100%;
+			max-width: var(--page-width);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		article > * + * {
+			margin-block-start: 1.5rem;
+		}
+
+		&.page-sm {
+			> article,
+			.content {
+				max-width: var(--page-width-sm);
+			}
+		}
+		&.page-lg {
+			> article,
+			.content {
+				max-width: var(--page-width-lg);
+			}
+		}
+	}
+
+	.page-fixed {
+		overflow: hidden;
+	}
+
+	.page-grow > article {
+		flex: 1;
+		margin-top: var(--page-space);
+		margin-bottom: var(--page-space);
+	}
+
+	.page.center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.page.nwp {
+		animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-center both;
+		animation-delay: 250ms;
+	}
+
+	@keyframes circle-in-center {
+		from {
+			clip-path: circle(0%);
+		}
+
+		to {
+			clip-path: circle(125%);
+		}
+	}
+
+	.content {
+		padding: var(--spacing-clamp);
+		width: 100%;
+		max-width: var(--page-width);
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.content.is-flat {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.aside {
+		grid-area: aside;
+		height: 100%;
+		position: relative;
+		overflow-x: hidden;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+
+		> article {
+			padding: var(--spacing-sm);
+		}
+	}
+
+	.aside {
+		--bg: var(--color-base-200);
+		--text: var(--color-base-content);
+		--b-col: var(--color-base-300/0);
+		--b-s: 3px;
+		--pad-x: var(--spacing-xs);
+		--pad-y: var(--spacing-xs);
+		--pad: var(--pad-y) var(--pad-x);
+		--gap: var(--spacing-xs);
+		background-color: var(--bg);
+		color: var(--text);
+		border-left: var(--b-s) solid var(--b-col);
+		padding: var(--pad);
+		gap: var(--gap);
+	}
+	@media (min-width: 768px) {
+		.aside {
+			--b-col: var(--color-base-300);
+			width: 320px;
+			height: 100%;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.aside {
+			--b-col: var(--color-base-300);
+			--pad-x: var(--spacing-sm);
+			--pad-y: var(--spacing-sm);
+			width: 380px;
+			height: 100%;
+		}
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Main/Page Ende                               */
+/* -------------------------------------------------------------------------- */

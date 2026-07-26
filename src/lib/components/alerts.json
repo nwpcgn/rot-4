@@ -1,0 +1,632 @@
+[
+	{
+		"order": "1",
+		"type": "info",
+		"message": "Item erscheint plötzlich in deiner Tasche.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "2",
+		"type": "info",
+		"message": "Das wird dir noch leid tun!schreit dein Widersacher.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "3",
+		"type": "error",
+		"message": "Dein Amulett zerbricht - ein Teil deiner Macht geht verloren.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "4",
+		"type": "error",
+		"message": "Dein Feuerholz ist nass - du kannst kein Lager machen.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "5",
+		"type": "info",
+		"message": "Dein Fortschritt wurde gespeichert.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "6",
+		"type": "info",
+		"message": "Dein Gegner zieht seine Waffe. Keine Gnade!",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "7",
+		"type": "info",
+		"message": "Dein Herz schlägt schneller - ein Gegner nähert sich!",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "8",
+		"type": "info",
+		"message": "Dein Instinkt war richtig - du bist nicht allein.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "9",
+		"type": "success",
+		"message": "Dein Körper pulsiert vor Energie - Level Up!",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "10",
+		"type": "success",
+		"message": "Dein Training zahlt sich aus - du bist gewachsen.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "11",
+		"type": "error",
+		"message": "Dein Weg wird durch unheimliche Kreaturen blockiert.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "12",
+		"type": "info",
+		"message": "Deine Geduld zahlt sich aus - du findest Item.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "13",
+		"type": "success",
+		"message": "Deine Sinne schärfen sich - du erkennst eine Gefahr im Voraus.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "14",
+		"type": "error",
+		"message": "Deine Tasche ist beschädigt - einige Gegenstände sind verloren.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "15",
+		"type": "info",
+		"message": "Der Boden zittert - etwas Großes nähert sich.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "16",
+		"type": "warning",
+		"message": "Der Fluss spricht. Hast du es bemerkt?",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "17",
+		"type": "info",
+		"message": "Die Aufgabe ist abgeschlossen - kehre zum Auftraggeber zurück.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "18",
+		"type": "info",
+		"message": "Die Belohnung für diese Aufgabe wartet auf dich.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "19",
+		"type": "warning",
+		"message": "Die Dunkelheit wächst. Pass auf dich auf da draußen.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "20",
+		"type": "success",
+		"message": "Die Luft um dich vibriert - du entwickelst dich weiter.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "21",
+		"type": "success",
+		"message": "Die Sonne bricht durch die Wolken und füllt dich mit Hoffnung.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "22",
+		"type": "success",
+		"message": "Du bist nun mächtiger als je zuvor.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "23",
+		"type": "info",
+		"message": "Du brauchst ein besonderes Item für diese Aufgabe.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "24",
+		"type": "success",
+		"message": "Du entdeckst eine Quelle reiner Magie - deine Kraft ist erneuert.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "25",
+		"type": "info",
+		"message": "Du erhältst Item als Belohnung für deinen Mut.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "26",
+		"type": "success",
+		"message": "Du erhältst einen geheimen Segen - deine nächste Begegnung wird einfacher.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "27",
+		"type": "warning",
+		"message": "Du erinnerst mich an jemanden... einen alten Helden vielleicht.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "28",
+		"type": "info",
+		"message": "Du findest Item in einer alten Höhle.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "29",
+		"type": "success",
+		"message": "Du findest einen alten Brief - er stärkt deinen Mut.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "30",
+		"type": "success",
+		"message": "Du findest einen geheimen Pfadder dir Zeit erspart.",
+		"dismissible": true,
+		"timeout": 5000
+	},
+	{
+		"order": "31",
+		"type": "info",
+		"message": "Du findest einen Hinweis auf das nächste Ziel.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "32",
+		"type": "success",
+		"message": "Du fühlst dich stärker - du bist aufgestiegen!",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "33",
+		"type": "info",
+		"message": "Du gewinnst Item im Spiel gegen einen Händler.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "34",
+		"type": "info",
+		"message": "Du gräbst im Sand und findest Item.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "35",
+		"type": "info",
+		"message": "Du hast Item durch Zufall entdeckt!",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "36",
+		"type": "info",
+		"message": "Du hast den falschen Pfad gewählt!ruft dein Feind.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "37",
+		"type": "info",
+		"message": "Du hast einen neuen Auftrag erhalten.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "38",
+		"type": "success",
+		"message": "Du meisterst eine neue Fähigkeit.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "39",
+		"type": "info",
+		"message": "Du öffnest eine Truhe und findest: Item!",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "40",
+		"type": "success",
+		"message": "Du spürst eine warme Energie - deine Wunden heilen sich!",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "41",
+		"type": "info",
+		"message": "Du spürst feindliche Präsenz - der Kampf beginnt.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "42",
+		"type": "error",
+		"message": "Du stürzt in ein Erdloch und verletzt dich am Bein.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "43",
+		"type": "error",
+		"message": "Du trittst in eine Falle und verletzt dich.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "44",
+		"type": "error",
+		"message": "Du verlierst die Orientierung in dichtem Nebel.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "45",
+		"type": "success",
+		"message": "Du wirst mit einer Vision der Zukunft erfüllt - und fühlst dich vorbereitet.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "46",
+		"type": "error",
+		"message": "Du wirst von seltsamen Stimmen heimgesucht - deine Moral sinkt.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "47",
+		"type": "info",
+		"message": "Ein alter Baum wirft Item ab.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "48",
+		"type": "info",
+		"message": "Ein alter Bekannter hat dir eine neue Mission gegeben.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "49",
+		"type": "error",
+		"message": "Ein alter Fluch aktiviert sich plötzlich.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "50",
+		"type": "success",
+		"message": "Ein alter Zauber wurde aufgelöst - du fühlst dich erleichtert.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "51",
+		"type": "success",
+		"message": "Ein altes Lied erklingt - du fühlst dich inspiriert.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "52",
+		"type": "error",
+		"message": "Ein Bann lähmt dich vorübergehend.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "53",
+		"type": "error",
+		"message": "Ein bösartiger Blick lähmt dich mit Angst.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "54",
+		"type": "error",
+		"message": "Ein Dieb stiehlt dir unbemerkt etwas aus deinem Inventar.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "55",
+		"type": "success",
+		"message": "Ein freundlicher Geist überreicht dir ein Geschenk.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "56",
+		"type": "info",
+		"message": "Ein geheimnisvoller Fremder übergibt dir Item.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "57",
+		"type": "info",
+		"message": "Ein Geräusch hinter dir - du wirst angegriffen!",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "58",
+		"type": "success",
+		"message": "Ein Licht durchdringt dich - du hast ein Level erreicht.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "59",
+		"type": "info",
+		"message": "Ein Lichtschein führt dich zu Item.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "60",
+		"type": "success",
+		"message": "Ein Lichtstrahl trifft dich. Du fühlst dich plötzlich stärker.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "61",
+		"type": "error",
+		"message": "Ein magischer Sturm trifft dich mit voller Wucht.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "62",
+		"type": "info",
+		"message": "Ein Monster ließ etwas fallen - Item gehört jetzt dir.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "63",
+		"type": "info",
+		"message": "Ein neuer Ort wurde auf deiner Karte markiert.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "64",
+		"type": "success",
+		"message": "Ein neues Level! Neue Kräfte erwachen in dir.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "65",
+		"type": "error",
+		"message": "Ein plötzlicher Schatten streift dich - du verlierst Lebensenergie.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "66",
+		"type": "info",
+		"message": "Ein Rätsel wurde gelöst - als Belohnung bekommst du Item.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "67",
+		"type": "success",
+		"message": "Ein Reisender segnet dich mit Glück auf deinem Weg.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "68",
+		"type": "info",
+		"message": "Ein Schatten bewegt sich - bereite dich auf den Kampf vor!",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "69",
+		"type": "success",
+		"message": "Ein Schutzkreis schützt dich vor dem nächsten Schaden.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "70",
+		"type": "info",
+		"message": "Ein Tagebucheintrag wurde aktualisiert.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "71",
+		"type": "success",
+		"message": "Ein Vogel bringt dir eine wertvolle Nachricht.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "72",
+		"type": "error",
+		"message": "Eine dunkle Präsenz raubt dir deine Kraft.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "73",
+		"type": "warning",
+		"message": "Einmal war ich auf der anderen Seite der Berge - dort gibt es Wunder.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "74",
+		"type": "info",
+		"message": "Endlich ein würdiger Gegner!ruft der Feind.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "75",
+		"type": "success",
+		"message": "Erfahrung macht dich weiser - du bist bereit für mehr.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "76",
+		"type": "info",
+		"message": "Etwas stimmt nicht... die Quest entwickelt sich anders.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "77",
+		"type": "success",
+		"message": "Gut gemacht!hörst du eine Stimme in deinem Inneren.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "78",
+		"type": "warning",
+		"message": "Hast du etwas zu handeln? Ich suche besondere Materialien.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "79",
+		"type": "warning",
+		"message": "Hier war früher eine große Stadt... jetzt ist nur noch Stille.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "80",
+		"type": "warning",
+		"message": "Hörst du das? Etwas stimmt nicht mit diesem Ort.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "81",
+		"type": "warning",
+		"message": "Ich habe Geschichten gehört von einem Schatz tief im Osten.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "82",
+		"type": "warning",
+		"message": "Ich war einst Abenteurer wie du - bis ich ein Schwert im Knie hatte.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "83",
+		"type": "info",
+		"message": "In einem Haufen Asche entdeckst du Item.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "84",
+		"type": "warning",
+		"message": "Man sagtdie Sterne flüstern mit jenen",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "85",
+		"type": "warning",
+		"message": "Meine Katze ist verschwunden. Wenn du sie findestbekommst du eine Belohnung.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "86",
+		"type": "warning",
+		"message": "Schau dich gut um. Manchmal versteckt sich das Wertvollste direkt vor deinen Augen.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "87",
+		"type": "warning",
+		"message": "Sei vorsichtigFremder. Nicht alles ist so friedlich",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "88",
+		"type": "warning",
+		"message": "Suchst du Arbeit? Ich habe da etwas für dich... wenn du mutig bist.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "89",
+		"type": "info",
+		"message": "Versteckt unter einem Stein findest du Item.",
+		"dismissible": true,
+		"timeout": 0
+	},
+	{
+		"order": "90",
+		"type": "warning",
+		"message": "Wenn du nach Süden gehstnimm genügend Tränke mit.",
+		"dismissible": true,
+		"timeout": 0
+	}
+]

@@ -1,0 +1,45 @@
+:root {
+	--spacing-base-define: 1rem;
+	--spacing-base: var(--spacing-base-define);
+	--spacing-xs: calc(var(--spacing-base) * 0.25);
+	--spacing-sm: calc(var(--spacing-base) * 0.5);
+	--spacing-md: calc(var(--spacing-base) * 0.75);
+	--spacing-lg: calc(var(--spacing-base) * 1.5);
+	--spacing-xl: calc(var(--spacing-base) * 2);
+	--spacing-clamp: clamp(
+		var(--spacing-sm),
+		var(--spacing-base),
+		var(--spacing-base)
+	);
+	--spacing-clamp-sm: clamp(
+		var(--spacing-xs),
+		var(--spacing-sm),
+		var(--spacing-sm)
+	);
+	--content-space: var(--spacing-base);
+	--page-space: var(--content-space);
+	--page-width-lg: 920px;
+	--page-width-sm: 360px;
+	--page-width: 680px;
+	--font-family-pixel: 'Press Start 2P', system-ui;
+	--font-family-retro: 'Uncial Antiqua', system-ui;
+	--font-family-mono: 'JetBrains Mono', monospace;
+	--font-family-nwp: 'Electrolize', sans-serif;
+}
+
+@layer base, utils, components, componentsNwp;
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background-color: #fff;
+	color: #262626;
+}
+@import './css/_typo.css';
+@import './css/_game-page.css';
+@import './css/_helper.css';
+@import './css/_utils.css';

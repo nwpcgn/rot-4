@@ -1,0 +1,65 @@
+@layer componentsNwp {
+	.ascii-grid {
+		font-family: monospace;
+		line-height: 1;
+		white-space: pre;
+		font-size: var(--ascii, 16px);
+		padding: 0;
+		margin: 0;
+	}
+
+	.ascii-grid span {
+		display: inline-flex;
+		width: 1em;
+		aspect-ratio: 1 / 1;
+		justify-content: center;
+		align-items: center;
+		font-size: var(--ascii, 16px);
+		/* color: #ddd; */
+	}
+	.dun-grid {
+		--cols: 50;
+		--rows: 30;
+		--size: 20px;
+		--dura: 0.15s;
+		--del: 0.1s;
+		display: inline-grid;
+		grid-template-columns: repeat(var(--cols), var(--size));
+
+		grid-template-rows: repeat(var(--rows), var(--size));
+		font-size: calc(var(--size) * 0.8);
+		font-family: monospace;
+		line-height: 1;
+
+		& > * {
+			display: grid;
+			width: var(--size);
+			aspect-ratio: 1 / 1;
+
+			& > * {
+				position: relative;
+				overflow: hidden;
+				font-size: calc(var(--size) * 0.8);
+
+				grid-area: 1 / 1;
+				transition:
+					opacity var(--dura) ease-in-out,
+					transform var(--dura) ease-in-out;
+				pointer-events: none;
+				display: grid;
+				place-content: center;
+				opacity: 0;
+				transform: scale(0.99);
+				z-index: -1;
+			}
+
+			> *.active {
+				opacity: 1;
+				transform: scale(1);
+				pointer-events: auto;
+				transition-delay: var(--del, 0);
+				z-index: 1;
+			}
+		}
+	}
+}

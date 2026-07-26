@@ -1,0 +1,42 @@
+@layer componentsNwp {
+	.stacker {
+		display: grid;
+		& > * {
+			grid-area: 1 / 1;
+		}
+
+		& *.active {
+			z-index: 10;
+		}
+	}
+
+	.stacker {
+		display: grid;
+		&.stacker-grow {
+			flex: 1;
+		}
+
+		> * {
+			position: relative;
+			overflow: hidden;
+			grid-area: 1 / 1;
+			opacity: 0;
+			transform: scale(0.96);
+			transition:
+				opacity 0.35s ease-in-out,
+				transform 0.35s ease-in-out;
+			pointer-events: none;
+			z-index: -1;
+			display: flex;
+			flex-direction: column;
+		}
+
+		> *.active {
+			opacity: 1;
+			transform: scale(1);
+			pointer-events: auto;
+			transition-delay: 0.35s;
+			z-index: 1;
+		}
+	}
+}

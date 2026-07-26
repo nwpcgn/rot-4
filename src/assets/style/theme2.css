@@ -1,0 +1,71 @@
+@import './bs.css';
+:root {
+	--sb-width-max: 320px;
+	--sb-width-min: 0px;
+	--sb-width: var(--sb-width-min);
+}
+
+.main {
+	margin-top: var(--bar, 0px);
+	margin-bottom: var(--foo, 0px);
+	flex: 1;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: 1fr;
+	grid-template-areas: 'page aside';
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.page {
+	grid-area: page;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.page-fixed {
+	overflow: hidden;
+}
+
+.page.center {
+	align-items: center;
+	justify-content: center;
+}
+
+.page.nwp {
+	animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-center both;
+	animation-delay: 250ms;
+}
+
+@keyframes circle-in-center {
+	from {
+		clip-path: circle(0%);
+	}
+	to {
+		clip-path: circle(125%);
+	}
+}
+@layer base, utils, components, componentsNwp;
+
+/* @import './css/_typo.css'; */
+@import './css/_game-page.css';
+@import './css/_helper.css';
+@import './css/_utils.css';

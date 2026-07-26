@@ -1,0 +1,31 @@
+@layer components {
+	.code-box {
+		--code-fg: var(--color-terminal-primary);
+		--code-bg: var(--color-terminal-dark);
+		--code-padding: var(--spacing-md);
+		display: grid;
+		border-radius: 0px;
+		padding: 0;
+		min-height: 4lh;
+		max-height: 200px;
+		overflow-y: auto;
+		&::after {
+			content: attr(data-replicated-value) ' ';
+			white-space: pre-wrap;
+			grid-area: 1 / 1;
+			visibility: hidden;
+		}
+
+		& textarea {
+			grid-area: 1 / 1;
+			resize: none;
+			font: inherit;
+			padding: 0;
+			border: none;
+			outline: none;
+			overflow: hidden;
+			background-color: var(--code-bg);
+			color: var(--code-fg);
+		}
+	}
+}

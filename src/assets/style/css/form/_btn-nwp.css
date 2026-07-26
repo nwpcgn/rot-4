@@ -1,0 +1,13 @@
+/* --------------------------------- Button --------------------------------- */
+
+@layer componentsNwp {
+	.btn-nwp {
+		@apply inline-flex cursor-pointer items-center gap-2 border-transparent bg-transparent px-3 py-2 text-center capitalize transition duration-200 ease-in-out;
+	}
+
+	.btn-nwp:hover,
+	.btn-nwp.active,
+	.btn-nwp:active {
+		@apply opacity-80;
+	}
+}

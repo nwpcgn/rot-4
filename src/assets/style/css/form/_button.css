@@ -1,0 +1,144 @@
+@layer components {
+	.btn,
+	.input:is([type='button'], [type='reset'], [type='submit']) {
+		--color-hover: var(--color-base-content);
+		--color-active: var(--color-info);
+		--border-color: var(--color-base-300);
+		--border-color-hover: var(--color-base-200);
+		--border-color-active: transparent;
+		--gap: var(--spacing-sm);
+		--padding-block: var(--spacing-sm);
+		--padding-inline: var(--spacing-base);
+		--decoration: none;
+		--decoration-hover: none;
+
+		--size: calc(var(--spacing-xs, 0.25rem) * 10);
+
+		--btn-bg: var(--color-base-200);
+		--btn-fg: var(--color-base-content);
+		--background-color: var(--btn-bg);
+		--color: var(--btn-fg);
+
+		@apply inline-flex shrink-0 flex-nowrap items-center justify-center gap-1.5 text-center align-middle outline-offset-2 select-none;
+
+		height: var(--size);
+		background-color: var(--background-color);
+		color: var(--color);
+		border: 1px solid var(--border-color);
+		border-radius: var(--border-radius-s);
+		cursor: pointer;
+		font-weight: 500;
+		display: inline-flex;
+		gap: var(--gap);
+		align-items: center;
+		padding-block: var(--padding-block);
+		padding-inline: var(--padding-inline);
+		text-align: center;
+		vertical-align: middle;
+		transition:
+			transform 0.1s ease,
+			color 0.4s ease-in,
+			background-color 0.4s ease-in,
+			opacity 0.4s easin-out;
+	}
+
+	.btn-square {
+		@apply size-8;
+		padding-inline: 0;
+	}
+
+	.btn:disabled {
+		@apply pointer-events-none cursor-not-allowed opacity-30;
+	}
+
+	.btn:active {
+		transform: scale(0.9);
+		filter: grayscale(50%);
+		opacity: 0.7;
+	}
+
+	.btn.active {
+		@apply opacity-60;
+	}
+
+	.btn-primary {
+		--background-color: var(--color-primary);
+		--color: var(--color-primary-content);
+		--color-hover: var(--color-primary-content);
+		--color-active: var(--color-info);
+		--border-color: var(--color-primary);
+		--border-color-hover: var(--color-primary);
+	}
+
+	.btn-success {
+		--background-color: var(--color-success);
+		--color: var(--color-success-content);
+		--color-hover: var(--color-success-content);
+		--color-active: var(--color-success);
+		--border-color: var(--color-success);
+		--border-color-hover: var(--color-success);
+	}
+
+	.btn-error {
+		--background-color: var(--color-error);
+		--color: var(--color-error-content);
+		--color-hover: var(--color-error-content);
+		--color-active: var(--color-error);
+		--border-color: var(--color-error);
+		--border-color-hover: var(--color-error);
+	}
+
+	.btn-warning {
+		--background-color: var(--color-warning);
+		--color: var(--color-warning-content);
+		--color-hover: var(--color-warning-content);
+		--color-active: var(--color-warning);
+		--border-color: var(--color-warning);
+		--border-color-hover: var(--color-warning);
+	}
+
+	.btn-info {
+		--background-color: var(--color-info);
+		--color: var(--color-info-content);
+		--color-hover: var(--color-info-content);
+		--color-active: var(--color-info);
+		--border-color: var(--color-info);
+		--border-color-hover: var(--color-info);
+	}
+	.btn-accent {
+		--background-color: var(--color-pink-500);
+		--color: var(--color-pink-100);
+		--color-hover: var(--color-pink-100);
+		--color-active: var(--color-pink-600);
+		--border-color: var(--color-pink-600);
+		--border-color-hover: var(--color-pink-600);
+	}
+	.btn-secondary {
+		--background-color: var(--color-secondary);
+		--color: var(--color-secondary-content);
+		--color-hover: var(--color-emerald-300);
+		--color-active: var(--color-emerald-500);
+		--border-color: var(--color-emerald-500);
+		--border-color-hover: var(--color-emerald-600);
+	}
+
+	.btn-square {
+		@apply px-0;
+		width: var(--size);
+		height: var(--size);
+	}
+
+	.btn-circle {
+		@apply rounded-full px-0;
+		width: var(--size);
+		height: var(--size);
+	}
+
+	.btn-wide {
+		@apply w-full max-w-64;
+	}
+
+	.btn-block {
+		@apply w-full;
+	}
+}
