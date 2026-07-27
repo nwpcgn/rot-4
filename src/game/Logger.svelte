@@ -4,8 +4,6 @@
 	let { log } = $props()
 </script>
 
-
-
 <div class="stacker bg-base-200 px-4">
 	<div class="log opacity-0">
 		{#each items as item (item)}

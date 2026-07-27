@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Game2 from './Game2.svelte'
-
 	import * as ROT from 'rot-js'
 
 	import Game from './game/Game.svelte'
@@ -18,8 +16,6 @@
 	}
 </script>
 
-<div id="portals"></div>
-
-<Game2></Game2>
+<Game></Game>
 
 <Sprites />
