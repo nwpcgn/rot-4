@@ -28,8 +28,8 @@
 
 <div id="portals"></div>
 
-<main class="main">
-	<Ship2></Ship2>
-</main>
+<!-- <main class="main">
 
+</main> -->
+	<Game></Game>
 <Sprites />

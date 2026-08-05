@@ -48,6 +48,19 @@
 		height: number
 	}
 
+	type Player = 'human' | 'enemy'
+
+	interface GameState {
+		turn: Player
+		winner: Player | null
+	}
+
+	interface FireResult {
+		hit: boolean
+		sunkShip: Ship | null
+		alreadyFired: boolean
+	}
+
 	const SIZE = 10
 	const SHIP_DEFS = [
 		{ id: 'carrier', name: 'Carrier', length: 5 },
@@ -234,6 +247,8 @@
 		}
 	}
 
+	let gameState: GameState = $state({ turn: 'human', winner: null })
+
 	let fleetEntries: FleetEntry[] = $derived(
 		SHIP_DEFS.map((def) => {
 			const placedShip = ships.find((s) => s.id === def.id)
@@ -260,6 +275,89 @@
 
 	let enemyBoard: Board = $state(createBoard())
 	let enemyShips: Ship[] = $state([])
+
+	function fireAt(
+		board: Board,
+		ships: Ship[],
+		x: number,
+		y: number
+	): FireResult {
+		const cell = board[y][x]
+
+		if (cell.hit) {
+			return { hit: false, sunkShip: null, alreadyFired: true }
+		}
+
+		cell.hit = true
+
+		if (cell.ship === null) {
+			return { hit: false, sunkShip: null, alreadyFired: false }
+		}
+
+		// Treffer -> prüfen ob Schiff dadurch versenkt ist
+		const ship = ships.find((s) => s.id === cell.ship)
+		if (!ship) return { hit: true, sunkShip: null, alreadyFired: false }
+
+		const allHit = ship.cells.every(({ x: cx, y: cy }) => board[cy][cx].hit)
+		if (allHit) {
+			ship.sunk = true
+			return { hit: true, sunkShip: ship, alreadyFired: false }
+		}
+
+		return { hit: true, sunkShip: null, alreadyFired: false }
+	}
+
+	function isFleetDestroyed(ships: Ship[]): boolean {
+		return ships.every((s) => s.sunk)
+	}
+
+	function handlePlayerShot(x: number, y: number) {
+		if (gameState.turn !== 'human' || gameState.winner) return
+
+		const result = fireAt(enemyBoard, enemyShips, x, y)
+		console.log(
+			'handlePlayerShothandlePlayerShothandlePlayerShot',
+			x,
+			y,
+			result
+		)
+
+		if (result.alreadyFired) return // Feld schon beschossen, ignorieren
+
+		if (isFleetDestroyed(enemyShips)) {
+			gameState.winner = 'human'
+			return
+		}
+
+		// Bei Treffer darf man (klassische Regel) nochmal schießen, sonst Zugwechsel
+		if (!result.hit) {
+			gameState.turn = 'enemy'
+			setTimeout(enemyTurn, 600) // kleine Verzögerung, wirkt weniger abrupt
+		}
+	}
+
+	function enemyTurn() {
+		if (gameState.winner) return
+
+		let x: number, y: number
+		do {
+			x = Math.floor(Math.random() * SIZE)
+			y = Math.floor(Math.random() * SIZE)
+		} while (board[y][x].hit) // nicht auf bereits beschossene Felder schießen
+
+		const result = fireAt(board, ships, x, y)
+
+		if (isFleetDestroyed(ships)) {
+			gameState.winner = 'enemy'
+			return
+		}
+
+		if (result.hit) {
+			setTimeout(enemyTurn, 600) // KI trifft -> nochmal dran
+		} else {
+			gameState.turn = 'human'
+		}
+	}
 
 	function setupEnemy() {
 		const result = generateRandomBoard(SHIP_DEFS)
@@ -321,6 +419,13 @@
 			<h3>Battleship</h3>
 			<h6 class="uppercase">PHASE: {status}</h6>
 		</div>
+		{#if gameState.winner}
+			<div class="ok status">
+				{gameState.winner === 'human'
+					? 'Sieg! Flotte des Gegners versenkt.'
+					: 'Niederlage – deine Flotte wurde versenkt.'}
+			</div>
+		{/if}
 
 		<div class="ship-grid">
 			{@render bars()}
@@ -360,7 +465,10 @@
 		<div class="split py-2">
 			<div class="flex flex-col items-center gap-1">
 				<span class="font-thin">Oriantation</span>
-				<button class="btn btn-circle" onclick={toggleDir} aria-label="Toggle Oriantation">
+				<button
+					class="btn btn-circle"
+					onclick={toggleDir}
+					aria-label="Toggle Oriantation">
 					<Icon icon={orientation !== 'horizontal' ? 'icon-row' : 'icon-col'} />
 				</button>
 			</div>
@@ -374,12 +482,11 @@
 
 		<div>
 			<label class="label">Ships</label>
-			<textarea class="textarea" value={JSON.stringify(ships)}
-			></textarea>
+			<textarea class="textarea" value={JSON.stringify(ships)}></textarea>
 		</div>
 		<div>
 			<label class="label">PlacedShips</label>
-			<textarea class="textarea" value={JSON.stringify(placedShips)}
+			<textarea class="textarea" value={JSON.stringify(enemyShips, null, 2)}
 			></textarea>
 		</div>
 	</aside>
@@ -419,7 +526,15 @@
 {#snippet main2()}
 	{#each enemyBoard as row, y}
 		{#each row as cell, x}
-			<div class="cell" class:ship={cell.ship !== null}></div>
+			<button
+				class="cell"
+				class:ship={cell.ship !== null}
+				class:hit-miss={cell.hit && cell.ship === null}
+				class:hit-ship={cell.hit && cell.ship !== null}
+				disabled={cell.hit ||
+					gameState.turn !== 'human' ||
+					gameState.winner !== null}
+				onclick={() => handlePlayerShot(x, y)}></button>
 		{/each}
 	{/each}
 {/snippet}
@@ -502,7 +617,11 @@
 	.cell.preview-ok {
 		background: oklch(0.508 0.118 165.612);
 	}
-	.cell.preview-bad {
+	.cell.preview-bad,
+	.cell.hit-miss {
 		background: oklch(0.514 0.222 16.935);
+	}
+	.cell.hit-ship {
+		background: oklch(55.493% 0.23744 343.562);
 	}
 </style>
