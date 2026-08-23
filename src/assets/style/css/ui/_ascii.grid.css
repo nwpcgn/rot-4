@@ -25,7 +25,6 @@
 		--del: 0.1s;
 		display: inline-grid;
 		grid-template-columns: repeat(var(--cols), var(--size));
-
 		grid-template-rows: repeat(var(--rows), var(--size));
 		font-size: calc(var(--size) * 0.8);
 		font-family: monospace;

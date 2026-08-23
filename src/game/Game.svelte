@@ -1,19 +1,19 @@
 <script lang="ts">
-	import opionsMap from './optionMapBase'
-	import Logger from './Logger.svelte'
+	import { generateDungeon } from './generateDungeon'
+	import { isAlive, takeDamage, distanceTo } from '$game/actor'
 	import { isDebugging } from './options'
 	import { onMount } from 'svelte'
-	import * as ROT from 'rot-js'
-	import { sleep } from '$lib'
-	import { TILE, TILE_DEFS, type TileId } from '$game/tiles'
 	import { randomItem, useItem as applyItem, type Item } from '$game/items'
-	import { isAlive, takeDamage, distanceTo } from '$game/actor'
+	import { sleep } from '$lib'
 	import { spawnEnemies, allEnemiesTurn, type Enemy } from '$game/enemies'
-	import type { Player } from '$game/types'
-	import Inventory from '$game/Inventory.svelte'
+	import { TILE, TILE_DEFS, type TileId } from '$game/tiles'
+	import * as ROT from 'rot-js'
 	import GameOver from '$game/GameOver.svelte'
+	import Inventory from '$game/Inventory.svelte'
+	import Logger from './Logger.svelte'
+	import opionsMap from './optionMapBase'
 	import Preview from './Preview.svelte'
-	import { generateDungeon } from './generateDungeon'
+	import type { Player } from '$game/types'
 	let gamePage = $state({ w: 0, h: 0 })
 	let options = $state({
 		VIEW_WIDTH: 20,
@@ -35,9 +35,8 @@
 		)
 
 	let roomList = $state([])
-
 	let keyLock = $state(false)
-	let end = $state({ x: 0, y: 0 })
+	let stairs = $state({ x: 0, y: 0 })
 	// ─── State ─────────────────────────────────────────────────
 	let gameOver = $derived(!isAlive(player))
 	let player = $state<Player>({
@@ -82,7 +81,7 @@
 		map = tiles
 		roomList = rooms
 		player.pos = start
-		end = exit
+		stairs = exit
 		map[exit.y][exit.x] = TILE.STAIRS
 
 		rooms.forEach((room, id) => {
@@ -262,15 +261,16 @@
 			}
 		}
 
-		updateFOV()
-		draw()
+		// updateFOV()
+		// draw()
 	}
 
 	async function handleStairs() {
 		keyLock = true
 		mounted = false
-		await sleep()
-		resetGame()
+		display.clear()
+		resetMap()
+		generateMap()
 		mounted = true
 		keyLock = false
 	}
