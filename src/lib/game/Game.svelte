@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Hero from './Hero.svelte'
 	import { generateDungeon } from './generateDungeon'
 	import { isAlive, takeDamage, distanceTo } from '$game/actor'
 	import { isDebugging } from './options'
@@ -46,7 +45,7 @@
 		char: '@',
 		color: 'yellow',
 		pos: { x: 0, y: 0 },
-		stats: { hp: 99, maxHp: 99, atk: 5, def: 2 },
+		stats: { hp: 100, maxHp: 100, atk: 5, def: 2 },
 		inventory: []
 	})
 
@@ -344,7 +343,28 @@
 
 <!-- HP-Anzeige über dem Spielfeld -->
 
-
+<div class="navbar bg-neutral text-neutral-content shadow-sm">
+	<div class="flex-1">
+		<button class="d-btn d-btn-neutral text-xl">nwpUI</button>
+	</div>
+	<div class="flex-none">
+		<div class="nav">
+			<span style="color: oklch(57.7% 0.245 27.325)">♥</span>
+			<div class="hp-bar-track">
+				<div
+					class="hp-bar-fill"
+					style="width: {(player.stats.hp / player.stats.maxHp) * 100}%;
+                 background: {player.stats.hp < 30
+						? 'oklch(57.7% 0.245 27.325)'
+						: 'oklch(0.7588 0.2948 142.51)'};">
+				</div>
+			</div>
+			<span class="hp-text">{player.stats.hp} / {player.stats.maxHp}</span>
+			<span class="stats-text"
+				>ATK {player.stats.atk} DEF {player.stats.def}</span>
+		</div>
+	</div>
+</div>
 <main class="main">
 	<section class="page page-fixed nwp">
 		<div
@@ -388,7 +408,7 @@
 
 	<aside class="aside space-y-2 bg-base-300 p-2">
 		<Preview {map} {player} {explored}></Preview>
-		<Hero {player}></Hero>
+
 		<Inventory
 			inventory={player.inventory}
 			onUse={onUseItem}

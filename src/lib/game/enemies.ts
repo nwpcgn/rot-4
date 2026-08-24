@@ -12,7 +12,7 @@ export const ENEMY_TYPES = {
 		name: 'Ratte',
 		char: 'r',
 		color: '#a78bfa',
-		stats: { hp: 20, maxHp: 20, atk: 4, def: 1 },
+		stats: { hp: 8, maxHp: 8, atk: 3, def: 0 },
 		behavior: 'chase' as const,
 		xp: 5,
 		sightRange: 6
@@ -130,7 +130,7 @@ export function spawnEnemies(rooms: ROT.Map.Room[], map: TileId[][]): Enemy[] {
 	rooms.forEach((room, i) => {
 		// Ersten Raum freilassen (Startposition des Spielers)
 		if (i === 0) return
-		if (Math.random() > 0.8) return
+		if (Math.random() > 0.6) return
 
 		const x = ROT.RNG.getUniformInt(room.x, room.x + room.width)
 		const y = ROT.RNG.getUniformInt(room.y, room.y + room.height)

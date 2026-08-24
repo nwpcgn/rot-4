@@ -1,11 +1,7 @@
 <script lang="ts">
-	import Game2 from './Game2.svelte'
-
-	import * as ROT from 'rot-js'
-
 	import Game from './game/Game.svelte'
 	import { Sprites, Log } from '$lib'
-	import { logger } from '$lib/components/logger.svelte.ts'
+	//	import { logger } from '$lib/components/logger.svelte.ts'
 	const op = {
 		width: 60,
 		height: 40,
@@ -16,10 +12,27 @@
 		dugPercentage: 0.2 /* we stop after this percentage of level area has been dug out */,
 		roomDugPercentage: 0.1 /* we stop after this much time has passed (msec) */
 	}
+
+
+	
 </script>
 
+
+
+
+<div class="navbar bg-neutral text-neutral-content shadow-sm">
+	<div class="flex-1">
+		<button class="d-btn d-btn-neutral text-xl">nwpUI</button>
+	</div>
+	<div class="flex-none">
+
+	</div>
+</div>
+
+
+<Game></Game>
+
+
+
 <div id="portals"></div>
-
-<Game2></Game2>
-
 <Sprites />

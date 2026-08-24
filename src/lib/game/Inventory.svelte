@@ -83,10 +83,7 @@
 
 	<div class="grid">
 		{#if selectedItem}
-			<div class="bg-secondary p-1 text-center text-secondary-content">
-				<span class="font-extralight">Action</span>
-			</div>
-			<div class="divide-y bg-base-200">
+			<div class="divide-y">
 				<div class="nav p-2">
 					<span style="color: {selectedItem.color}; font-size: 1.2rem"
 						>{selectedItem.char}</span>
@@ -100,8 +97,8 @@
 				</div>
 			</div>
 		{:else}
-			<div class="bg-secondary/70 p-1 text-center text-secondary-content">
-				<div class="font-extralight">Auswählen…</div>
+			<div class="bg-info/50 p-2 text-info-content">
+				<div class="detail-empty">Auswählen…</div>
 			</div>
 		{/if}
 	</div>
