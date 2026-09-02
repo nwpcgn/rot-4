@@ -24,8 +24,16 @@ export const ITEM_TYPES: Record<string, Item> = {
 		char: '/',
 		color: '#94a3b8',
 		effect: 'atk',
-		value: 5,
-		desc: '+5 Angriff (diese Etage).'
+		value: 1,
+		desc: '+1 Angriff (diese Etage).'
+	},
+	SHIELD: {
+		name: 'Schild',
+		char: '∆',
+		color: '#94a3b8',
+		effect: 'def',
+		value: 1,
+		desc: '+1 Verteidigung (diese Etage).'
 	},
 	GOLD: {
 		name: 'Gold',

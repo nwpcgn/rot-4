@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Hero from './Hero.svelte'
+
 	import { generateDungeon } from './generateDungeon'
 	import { isAlive, takeDamage, distanceTo } from '$game/actor'
 	import { isDebugging } from './options'
@@ -16,13 +17,15 @@
 	import Preview from './Preview.svelte'
 	import type { Player } from '$game/types'
 	let gamePage = $state({ w: 0, h: 0 })
-	let options = $state({
-		VIEW_WIDTH: 20,
-		VIEW_HEIGHT: 12,
-		MAP_WIDTH: 60,
-		MAP_HEIGHT: 40,
-		TILE_SIZE: 32
-	})
+	let {
+		options = {
+			VIEW_WIDTH: 20,
+			VIEW_HEIGHT: 12,
+			MAP_WIDTH: 60,
+			MAP_HEIGHT: 40,
+			TILE_SIZE: 32
+		}
+	} = $props()
 
 	let op = $state({
 		...opionsMap,
@@ -344,54 +347,38 @@
 
 <!-- HP-Anzeige über dem Spielfeld -->
 
+<section class="page page-fixed nwp">
+	<div class="grid flex-1 place-content-center">
+		<div style="position: relative">
+			<div>
+				<div class="split">
+					<div>
+						<em>Map:</em> <b>{options.MAP_WIDTH}x{options.MAP_HEIGHT}</b>
+					</div>
 
-<main class="main">
-	<section class="page page-fixed nwp">
-		<div
-			bind:clientWidth={gamePage.w}
-			bind:clientHeight={gamePage.h}
-			class="grid flex-1 place-content-center">
-			<div style="position: relative">
-				<div>
-					<div class="split">
-						<div>
-							<span>
-								<em>Map:</em>
-								<b>{options.MAP_WIDTH}x{options.MAP_HEIGHT}</b>
-							</span>
-							<span>
-								<em>View:</em>
-								<b>{options.VIEW_WIDTH}x{options.VIEW_HEIGHT}</b>
-							</span>
-						</div>
-
-						<div>
-							<span><em>Rooms:</em> <b>{roomList.length}</b></span>
-							<span
-								><em>Enemies:</em> <b>{enemies.length}</b>
-
-								<em>Items</em>
-								<b>{itemsOnMap}</b></span>
-						</div>
+					<div>
+						<em>Rooms:</em> <b>{roomList.length}</b>
+						<em>Enemies:</em> <b>{enemies.length}</b>
+						<em>Items</em> <b>{itemsOnMap}</b>
 					</div>
 				</div>
-
-				<div id="game-container"></div>
-
-				{#if gameOver}
-					<GameOver onReset={resetGame} />
-				{/if}
 			</div>
-		</div>
-		<Logger {log}></Logger>
-	</section>
 
-	<aside class="aside space-y-2 bg-base-300 p-2">
-		<Preview {map} {player} {explored}></Preview>
-		<Hero {player}></Hero>
-		<Inventory
-			inventory={player.inventory}
-			onUse={onUseItem}
-			onDrop={onDropItem} />
-	</aside>
-</main>
+			<div id="game-container"></div>
+
+			{#if gameOver}
+				<GameOver onReset={resetGame} />
+			{/if}
+		</div>
+	</div>
+	<Logger {log}></Logger>
+</section>
+
+<aside class="aside space-y-2 bg-base-300 p-2">
+	<Preview {map} {player} {enemies} {explored}></Preview>
+	<Hero {player}></Hero>
+	<Inventory
+		inventory={player.inventory}
+		onUse={onUseItem}
+		onDrop={onDropItem} />
+</aside>

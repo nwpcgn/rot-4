@@ -14,21 +14,22 @@
 	} = $props()
 </script>
 
-<div class="grid">
+<div class="grid bg-base-200">
 	<header class="split bg-secondary px-2 py-2 text-secondary-content">
 		<span class="flex-1"><b>Hero</b></span>
 		<span
-			><strong>{player?.stats.hp}</strong> /<small>{player?.stats.maxHp}</small
+			><em>HP:</em> <strong>{player?.stats.hp}</strong> /<small
+				>{player?.stats.maxHp}</small
 			></span>
 	</header>
 	<Progress min={0} max={player?.stats.maxHp} value={player?.stats.hp}
 	></Progress>
-	<div class="grid bg-base-200">
+	<div class="grid grid-cols-2 divide-x">
 		<div class="split px-2 py-1">
 			<span class="capitalize italic">Atk</span>
 			<span class="font-semibold">{player?.stats.atk}</span>
 		</div>
-		<hr />
+
 		<div class="split px-2 py-1">
 			<span class="capitalize italic">Def</span>
 			<span class="font-semibold">{player?.stats.def}</span>

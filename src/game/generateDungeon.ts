@@ -48,9 +48,9 @@ export function generateDungeon(options: DungeonOptions): DungeonResult {
 		width = 60,
 		height = 40,
 		algorithm = 'digger',
-		roomWidth = [3, 9],
-		roomHeight = [3, 6],
-		corridorLength = [1, 5],
+		roomWidth = [4, 10],
+		roomHeight = [3, 8],
+		corridorLength = [1, 6],
 		dugPercentage = 0.25,
 		roomDugPercentage = 0.15
 	} = options

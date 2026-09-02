@@ -1,5 +1,6 @@
 <script lang="ts">
-	let { map, explored, player } = $props()
+	import { isAlive } from '$game/actor'
+	let { map, explored, player, enemies } = $props()
 	let maxW = $state(0)
 	let ts = $state(1)
 	let canvas: HTMLCanvasElement = $state()
@@ -24,7 +25,7 @@
 
 				ctx.fillStyle = '#222'
 				if (explored[y][x]) {
-					ctx.fillStyle = '#ccc'
+					ctx.fillStyle = '#bbb'
 				}
 
 				if (stepTile == 2) {
@@ -34,6 +35,14 @@
 				}
 				ctx.fillRect(x * ts, y * ts, ts, ts)
 			}
+		}
+
+		for (const enemy of enemies) {
+			if (!isAlive(enemy)) continue
+			// if (!visible[enemy.pos.y]?.[enemy.pos.x]) continue
+
+			ctx.fillStyle = 'oklch(87.9% 0.169 91.605)'
+			ctx.fillRect(enemy.pos.x * ts, enemy.pos.y * ts, ts, ts)
 		}
 
 		ctx.fillStyle = 'oklch(65.6% 0.241 354.308)'

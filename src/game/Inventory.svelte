@@ -51,7 +51,7 @@
 		<span>({inventory.length})</span>
 	</header>
 
-	<section class="grid divide-y divide-base-content">
+	<section class="grid divide-y divide-base-content bg-base-100">
 		{#if inventory.length === 0}
 			<div class="split px-2 py-2 text-sm tracking-wide opacity-60">
 				<span class="italic"> — leer —</span>
@@ -81,7 +81,7 @@
 		<div></div>
 	</section>
 
-	<div class="grid">
+	<div class="grid bg-base-100">
 		{#if selectedItem}
 			<div class="bg-secondary p-1 text-center text-secondary-content">
 				<span class="font-extralight">Action</span>
