@@ -118,7 +118,7 @@
 		}
 	}
 
-	.aside {
+	/* .aside {
 		--bg: var(--color-base-200);
 		--text: var(--color-base-content);
 		--b-col: var(--color-base-300/0);
@@ -128,11 +128,11 @@
 		--pad: var(--pad-y) var(--pad-x);
 		--gap: var(--spacing-xs);
 		background-color: var(--bg);
-		color: var(--text);
+		color: var(--text); 
 		border-left: var(--b-s) solid var(--b-col);
 		padding: var(--pad);
 		gap: var(--gap);
-	}
+	}*/
 
 	.foo-bar {
 		grid-area: foo-bar;

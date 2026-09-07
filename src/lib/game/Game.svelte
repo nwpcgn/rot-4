@@ -15,13 +15,15 @@
 	import Preview from './Preview.svelte'
 	import type { Player } from '$game/types'
 	let gamePage = $state({ w: 0, h: 0 })
-	let options = $state({
-		VIEW_WIDTH: 20,
-		VIEW_HEIGHT: 12,
-		MAP_WIDTH: 60,
-		MAP_HEIGHT: 40,
-		TILE_SIZE: 32
-	})
+	let {
+		options = {
+			VIEW_WIDTH: 20,
+			VIEW_HEIGHT: 12,
+			MAP_WIDTH: 60,
+			MAP_HEIGHT: 40,
+			TILE_SIZE: 32
+		}
+	} = $props()
 
 	let op = $state({
 		...opionsMap,
@@ -310,15 +312,7 @@
 	}
 
 	const resetGame = async () => {
-		display = new ROT.Display({
-			width: options.VIEW_WIDTH,
-			height: options.VIEW_HEIGHT,
-			fontSize: options.TILE_SIZE,
-			forceSquareRatio: true
-		})
-		document
-			.getElementById('game-container')
-			?.appendChild(display.getContainer()!)
+		display.clear()
 		resetPlayer()
 		resetMap()
 		generateMap()
@@ -333,6 +327,15 @@
 
 	// ─── Mount ─────────────────────────────────────────────────
 	onMount(() => {
+		display = new ROT.Display({
+			width: options.VIEW_WIDTH,
+			height: options.VIEW_HEIGHT,
+			fontSize: options.TILE_SIZE,
+			forceSquareRatio: true
+		})
+		document
+			.getElementById('game-container')
+			?.appendChild(display.getContainer()!)
 		resetGame()
 
 		window.addEventListener('keydown', handleInput)

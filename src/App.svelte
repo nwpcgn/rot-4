@@ -1,23 +1,21 @@
 <script lang="ts">
+	import {
+		Router,
+		Route,
+		Fallback,
+		RouterTrace,
+		location
+	} from '@svelte-router/core'
 	import Game from './game/Game.svelte'
-	import { Sprites, Log, sleep } from '$lib'
+	import { Sprites, Log, sleep, nav } from '$lib'
 	//	import { logger } from '$lib/components/logger.svelte.ts'
-	const op = {
-		width: 60,
-		height: 40,
-		algorithm: 'digger',
-		roomWidth: [3, 9] /* room minimum and maximum width */,
-		roomHeight: [3, 5] /* room minimum and maximum height */,
-		corridorLength: [3, 10] /* corridor minimum and maximum length */,
-		dugPercentage: 0.2 /* we stop after this percentage of level area has been dug out */,
-		roomDugPercentage: 0.1 /* we stop after this much time has passed (msec) */
-	}
+
 	let options = $state({
-		VIEW_WIDTH: 22,
-		VIEW_HEIGHT: 18,
+		VIEW_WIDTH: 20,
+		VIEW_HEIGHT: 12,
 		MAP_WIDTH: 60,
 		MAP_HEIGHT: 40,
-		TILE_SIZE: 32
+		TILE_SIZE: 38
 	})
 
 	let promise = $state(sleep(400))
@@ -29,16 +27,34 @@
 			class="btn text-xl btn-neutral"
 			onclick={() => (promise = sleep(200))}>nwpUI</button>
 	</div>
-	<div class="flex-none"></div>
+	<div class="flex-none">
+		<ul class="menu menu-horizontal px-1">
+			{#each nav as { href, name, slug } (href)}
+				<li><a href="#{href}" aria-label={slug}>{name}</a></li>
+			{/each}
+		</ul>
+	</div>
 </div>
 
 <main class="main">
 	{#await promise}
 		<!-- promise is pending -->
 	{:then _}
-		<Game {options} {op}></Game>
+		<Router>
+			<Game {options}></Game>
+			<Route path="/" key="lobby">
+				<section class="page nwp">
+					<article><h4>Lobby</h4></article>
+				</section>
+			</Route>
+			<Route path="/game" key="game">
+				<section class="page nwp"><article><h4>Game</h4></article></section>
+			</Route>
+			<Route path="/settings" key="settings">
+				<section class="page nwp"><article><h4>Settings</h4></article></section>
+			</Route>
+		</Router>
 	{/await}
 </main>
-
 <div id="portals"></div>
 <Sprites />
